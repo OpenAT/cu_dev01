@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Qweb Report Action -->
+        <report
+            id="qweb_test_report"
+            model="project.project"
+            report_type="qweb-html"
+            string="Mikes Report"
+            name="qweb_report_test.mikes_qweb_report"
+        />
+
+        <!-- Qweb Report -->
+        <template id="mikes_qweb_report">
+            <t t-call="report.html_container">
+                <t t-call="report.external_layout">
+                    <t t-foreach="docs" t-as="project">
+                        <div class="page">
+                            <h2>Project Name:</h2>
+                            <p>This object's name is <span t-field="project.name"/></p>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</openerp>
