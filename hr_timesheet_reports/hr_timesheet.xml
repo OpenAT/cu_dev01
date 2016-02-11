@@ -78,11 +78,57 @@
                                     </t>
                                 </tr>
                                 <tr>
-                                    <td>Projekt:</td>
-                                    <t t-foreach="timesheet.project_hours" t-as="h">
-                                       <tr>
-                                           <span t-field="h.account_id.complete_name"/>
-                                       </tr>
+                                    <td style="margin:0 20px 0 0;"></td>
+                                    <td style="margin:0 20px 0 0;">Geplant: </td>
+                                    <t t-foreach="timesheet.day_details" t-as="d">
+                                            <td>
+                                                <span t-field="d.planned"/>
+                                            </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td style="margin:0 20px 0 0;"></td>
+                                    <td style="margin:0 20px 0 0;">Anwesenheit: </td>
+                                    <t t-foreach="timesheet.day_details" t-as="d">
+                                            <td>
+                                                <span t-field="d.attendance"/>
+                                            </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td style="margin:0 20px 0 0;"></td>
+                                    <td style="margin:0 20px 0 0;">Überstunden: </td>
+                                    <t t-foreach="timesheet.day_details" t-as="d">
+                                            <td>
+                                                <span t-field="d.overtime"/>
+                                            </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td style="margin:0 20px 0 0;"></td>
+                                    <td style="margin:0 20px 0 0;">Krank: </td>
+                                    <t t-foreach="timesheet.day_details" t-as="d">
+                                            <td>
+                                                <span t-field="d.illness"/>
+                                            </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td style="margin:0 20px 0 0;"></td>
+                                    <td style="margin:0 20px 0 0;">Sonstige: </td>
+                                    <t t-foreach="timesheet.day_details" t-as="d">
+                                            <td>
+                                                <span t-field="d.others"/>
+                                            </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td style="margin:0 20px 0 0;"></td>
+                                    <td style="margin:0 20px 0 0;">Korrekturen: </td>
+                                    <t t-foreach="timesheet.correction_ids" t-as="c">
+                                            <td>
+                                                <span t-field="c.value_hours"/>
+                                            </td>
                                     </t>
                                 </tr>
                             </table>
