@@ -26,5 +26,6 @@
     'depends': ['cam_hr'],
     'data': [
         'hr_timesheet.xml',
+        'hr_timesheet_pdf.xml',
     ],
 }

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Qweb Report Action -->
+        <report
+            id="hr_timesheet_report_pdf"
+            model="hr_timesheet_sheet.sheet"
+            report_type="qweb-pdf"
+            string="Timesheet Report PDF"
+            name="hr_timesheet_reports.hr_timesheet_pdf_report"
+        />
+
+<record id="paperformat_lowmargin" model="report.paperformat">
+    <field name="name">European A4 low margin</field>
+    <field name="default" eval="True" />
+    <field name="format">A4</field>
+    <field name="page_height">0</field>
+    <field name="page_width">0</field>
+    <field name="orientation">Portrait</field>
+    <field name="margin_top">4</field>
+    <field name="margin_bottom">4</field>
+    <field name="margin_left">4</field>
+    <field name="margin_right">4</field>
+    <field name="header_line" eval="False" />
+    <field name="header_spacing">0</field>
+    <field name="dpi">90</field>
+</record>
+
+<record id="hr_timesheet_reports.hr_timesheet_report_pdf" model="ir.actions.report.xml">
+    <field name="paperformat_id" ref="hr_timesheet_reports.paperformat_lowmargin" />
+</record>
+
+
+
+        <!-- Qweb Report -->
+        <template id="hr_timesheet_pdf_report">
+            <!-- <t t-call="report.html_container"> -->
+                <!-- <t t-call="report.external_layout"> -->
+                    <t t-foreach="docs" t-as="timesheet">
+                        <div class="page">
+
+                             <!-- <div class="row">
+                                <div class="col-xs-12" style="background-color:#E99002;border: 1px solid;color:#ffffff;">
+                                   <h3>ZEITZETTEL</h3>
+                                </div>
+                             </div>
+
+                             <div class="row">
+                                <div class="col-md-8" style="border-left:1px solid;">
+                                   <strong>Timesheet von: <span t-field="timesheet.employee_id"/></strong>
+                                </div>
+                                <div class="col-md-4" style="text-align:right;border-left:1px solid;">
+                                   <strong>Von:</strong><br/>
+                                   <strong>Bis:</strong>
+                                </div>
+                                <div class="col-md-4" style="border-right:1px solid;">
+                                   <span t-field="timesheet.date_from"/><br/>
+                                   <span t-field="timesheet.date_to"/>
+                               </div>
+                            </div>
+                            <div class="row mt32" style="background-color:#568eff;border: 1px solid;color:#ffffff;">
+                                <t t-foreach="timesheet.day_details" t-as="d">
+                                    <span t-field="d.name" t-field-options='{"format": "d"}'/>
+                                </t>
+                            </div> -->
+                            <tr>
+                                <td>
+                                    <h2>Timesheet von: <span t-field="timesheet.employee_id"/></h2>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Zeitraum: <span t-field="timesheet.date_from"/> to <span t-field="timesheet.date_from"/></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Urlaub Summe: <span t-field="timesheet.sum_vacation_days"/></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Urlaub verbraucht: <span t-field="timesheet.total_vacation_days"/></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Urlaub Gesamt: <span t-esc="timesheet.sum_vacation_days-timesheet.total_vacation_days+timesheet.vacation_alloc_days"/></p>
+                                </td>
+                            </tr>
+                            <table border="1">
+                                <tr>
+                                    <td style="margin:0 20px 0 0;"></td>
+                                    <td style="margin:0 20px 0 0;">Tage: </td>
+                                    <t t-foreach="timesheet.day_details" t-as="d">
+                                            <td>
+                                                <span t-field="d.name" t-field-options='{"format": "dd"}'/>.
+                                            </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td style="margin:0 20px 0 0;"></td>
+                                    <td style="margin:0 20px 0 0;">Geplant: </td>
+                                    <t t-foreach="timesheet.day_details" t-as="d">
+                                            <td>
+                                                <span t-field="d.planned"/>
+                                            </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td style="margin:0 20px 0 0;"></td>
+                                    <td style="margin:0 20px 0 0;">Anwesenheit: </td>
+                                    <t t-foreach="timesheet.day_details" t-as="d">
+                                            <td>
+                                                <span t-field="d.attendance"/>
+                                            </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td style="margin:0 20px 0 0;"></td>
+                                    <td style="margin:0 20px 0 0;">Überstunden: </td>
+                                    <t t-foreach="timesheet.day_details" t-as="d">
+                                            <td>
+                                                <span t-field="d.overtime"/>
+                                            </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td style="margin:0 20px 0 0;"></td>
+                                    <td style="margin:0 20px 0 0;">Krank: </td>
+                                    <t t-foreach="timesheet.day_details" t-as="d">
+                                            <td>
+                                                <span t-field="d.illness"/>
+                                            </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td style="margin:0 20px 0 0;"></td>
+                                    <td style="margin:0 20px 0 0;">Sonstige: </td>
+                                    <t t-foreach="timesheet.day_details" t-as="d">
+                                            <td>
+                                                <span t-field="d.others"/>
+                                            </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td style="margin:0 20px 0 0;"></td>
+                                    <td style="margin:0 20px 0 0;">Korrekturen: </td>
+                                    <t t-foreach="timesheet.correction_ids" t-as="c">
+                                            <td>
+                                                <span t-field="c.value_hours"/>
+                                            </td>
+                                    </t>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                <!-- </t> -->
+            <!-- </t> -->
+        </template>
+
+    </data>
+</openerp>
