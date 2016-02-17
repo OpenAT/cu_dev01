@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <template id="report_layout_invoice_ahch_footer">
+        <t t-if ="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"/>
+            <t t-set="customer" t-value="o.partner_id"/>
+        </t>
+            <div class="footer" style="height: 40%">
+                <style type="text/css">
+                <![CDATA[
+                /* ocrb */
+               @font-face {
+                   font-family: "ocrb";
+                   font-style: normal;
+                   font-weight: normal;
+                   src: url('fonts/ocrb.ttf') format("truetype");
+                }
+                ]]>
+                </style>
+ <!-- <p style="font-family: bvrocrb;">BVROCRB</p> -->
+                <div class="text-center" style="border-top: 1px solid black; font-family: 'OCR-B';">
+                    <div class="col-xs-4" style="margin-top:10px; font-size:10px; text-align:left;">
+                        <strong>IBAN:</strong> <span t-field="company.bank_ids.acc_number"/><br/>
+                        <strong>BIC:</strong> <span t-field="company.bank_ids.bank_bic"/><br/>
+                    </div>
+                    <div class="col-xs-4" style="margin-top:10px; font-size:10px; text-align:left;">
+                        <strong>IBAN:</strong> <span t-field="company.bank_ids.acc_number"/><br/>
+                        <strong>BIC:</strong> <span t-field="company.bank_ids.bank_bic"/><br/>
+                    </div>
+                <ul class="list-inline">
+                    <li>Page:</li>
+                    <li><span class="page"/></li>
+                    <li>/</li>
+                    <li><span class="topage"/></li>
+                </ul>
+                </div>
+            </div>
+        </template>
+    </data>
+</openerp>

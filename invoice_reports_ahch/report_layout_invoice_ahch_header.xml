@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+<template id="report_layout_invoice_ahch_header">
+    <t t-if ="o and 'company_id' in o">
+        <t t-set="company" t-value="o.company_id"/>
+        <t t-set="customer" t-value="o.partner_id"/>
+    </t>
+
+    <div class="header" style="height: 30%">
+        <div class="row" style="font-size:11px; line-height=80%">
+            <div class="col-xs-4" style="margin-top:10px">
+                <img  t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 65px;" /><br/>
+                <strong>Internet:</strong> <span t-field="company.website"/><br/>
+                <strong>Email:</strong> <span t-field="company.email"/><br/>
+            </div>
+            <div class="col-xs-3" style="margin-top:10px">
+                <strong><h3>Shop</h3></strong>
+                <strong>Phone:</strong> <span t-field="company.phone"/><br/>
+                <strong>Fax:</strong> <span t-field="company.fax"/><br/>
+            </div>
+           <div class="col-xs-5" style="margin-top:10px; float:right;">
+                <img  t-if="company.logo_report_dd" t-att-src="'data:image/png;base64,%s' % company.logo_report_dd" style="max-height: 65px;" /><br/>
+                <strong>Internet:</strong> <span t-field="company.website_report_dd"/><br/>
+                <strong>Email:</strong> <span t-field="company.email_report_dd"/><br/>
+            </div>
+        </div>
+
+            <hr style="height:3px;border:none;color:#d70f41;background-color:#d70f41;margin-top:0px;margin-bottom:12px"/>
+        </div>
+
+</template>
+
+    </data>
+</openerp>
