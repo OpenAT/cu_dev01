@@ -126,7 +126,8 @@
                         <div style="font-size:12px; margin-top:-10px; margin-left: 44px; text-align:left; font-family: 'OCR-B';">
                             <!-- <t t-if="'amount_total' in o.fields_get()"><span t-esc="'{0:,.0f}'.format(int(o.amount_total))" /></t> -->
                             <!-- 01<span t-esc="'{%08d}'.format(intamount)"/><span t-esc="decamount"/>X><span t-esc="(company.company_registry).replace(' ', '')"/>+ <span t-field="(company.bank_ids.bvr_customer_number).replace('-', '')"/> -->
-                            01<span t-esc="'{0:08}'.format(intamount)"/><span t-esc="decamount"/>X><span t-esc="(company.company_registry).replace(' ', '')"/>+ <span t-field="(company.bank_ids.bvr_customer_number).replace('-', '')"/>
+                            <!-- 01<span t-esc="'{0:08}'.format(intamount)"/><span t-esc="decamount"/>X><span t-esc="(company.company_registry).replace(' ', '')"/>+ <span t-field="(company.bank_ids.bvr_customer_number).replace('-', '')"/> -->
+                            01<span t-esc="intamount"/><span t-esc="decamount"/>X><span t-esc="(company.company_registry).replace(' ', '')"/>+ <span t-esc="(company.bank_ids.bvr_customer_number).replace('-', '')"/>
                             <!-- <span t-esc="get_pz(company.company_registry)"/> -->
                         </div>
                     </div>
