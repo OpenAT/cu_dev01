@@ -15,5 +15,19 @@
             </field>
         </field>
 </record>
+
+        <record model="ir.ui.view" id="view_partner_bank_chf_extension">
+      <field name="name">res.partner_bank.form.chf_extension</field>
+      <field name="model">res.partner.bank</field>
+      <field name="inherit_id" ref="base.view_partner_bank_form"/>
+      <field name="arch" type="xml">
+        <group name="bank" position="after">
+          <group string="BVR options">
+            <field name="bvr_customer_number"/>
+            <field name="pf_acc_num"/>
+          </group>
+        </group>
+      </field>
+    </record>
 </data>
 </openerp>

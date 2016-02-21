@@ -1,0 +1,214 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* reports_ahch
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-17 14:15+0000\n"
+"PO-Revision-Date: 2016-02-17 14:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Amount"
+msgstr "Amount"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Aus Bestandsgründen kann es bei Gratisartikeln zu Mengenabweichungen zwischen Ihrer Bestellung und\n"
+"                der Lieferung kommen. Bitte verwenden Sie für die Bezahlung der Rechnung immer den orangenen Einzahlungsschein"
+msgstr "Aus Bestandsgründen kann es bei Gratisartikeln zu Mengenabweichungen zwischen Ihrer Bestellung und\n"
+"                der Lieferung kommen. Bitte verwenden Sie für die Bezahlung der Rechnung immer den orangenen Einzahlungsschein"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.report_layout_invoice_ahch_footer
+msgid "BIC:"
+msgstr "BIC:"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Base"
+msgstr "Base"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Cancelled Invoice"
+msgstr "Cancelled Invoice"
+
+#. module: reports_ahch
+#: model:ir.model,name:reports_ahch.model_res_company
+msgid "Companies"
+msgstr "Companies"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Customer Code:"
+msgstr "Customer Code:"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Description"
+msgstr "Description"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Description:"
+msgstr "Description:"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Discount (%)"
+msgstr "Discount (%)"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Draft Invoice"
+msgstr "Draft Invoice"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.report_layout_invoice_ahch_header
+msgid "Email:"
+msgstr "Email:"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.report_layout_invoice_ahch_header
+msgid "Fax:"
+msgstr "Fax:"
+
+#. module: reports_ahch
+#: field:res.company,logo_report_dd:0
+msgid "Header Image"
+msgstr "Header Image"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.report_layout_invoice_ahch_footer
+msgid "IBAN:"
+msgstr "IBAN:"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.report_layout_invoice_ahch_header
+msgid "Internet:"
+msgstr "Internet:"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Invoice"
+msgstr "Invoice"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Invoice Date:"
+msgstr "Invoice Date:"
+
+#. module: reports_ahch
+#: model:ir.actions.report.xml,name:reports_ahch.report_invoice_ahch
+msgid "Invoice Report AHCH"
+msgstr "Invoice Report AHCH"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "PRO-FORMA"
+msgstr "PRO-FORMA"
+
+#. module: reports_ahch
+#: report:addons/invoice_reports_ahch/examples/bvr.mako:198
+msgid "Payment slip for:"
+msgstr "Payment slip for:"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.report_layout_invoice_ahch_header
+msgid "Phone:"
+msgstr "Phone:"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Quantity"
+msgstr "Quantity"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Reference:"
+msgstr "Reference:"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Refund"
+msgstr "Refund"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.report_layout_invoice_ahch_header
+msgid "Shop"
+msgstr "Shop"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Source:"
+msgstr "Source:"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Supplier Invoice"
+msgstr "Supplier Invoice"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Supplier Refund"
+msgstr "Supplier Refund"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Tax"
+msgstr "Tax"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: reports_ahch
+#: help:res.company,logo_report_dd:0
+msgid "This field holds the image used for the logo on the prints, limited to 1024x1024px"
+msgstr "This field holds the image used for the logo on the prints, limited to 1024x1024px"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Total"
+msgstr "Total"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Total Without Taxes"
+msgstr "Total Without Taxes"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.invoice_ahch_document
+msgid "Unit Price"
+msgstr "Unit Price"
+
+#. module: reports_ahch
+#: field:res.company,email_report_dd:0
+msgid "Use Second Email Address printed at Header in Report"
+msgstr "Use Second Email Address printed at Header in Report"
+
+#. module: reports_ahch
+#: help:res.company,website_report_dd:0
+msgid "Use Website Address displayed at Header"
+msgstr "Use Website Address displayed at Header"
+
+#. module: reports_ahch
+#: field:res.company,website_report_dd:0
+msgid "Website 2 Header Report"
+msgstr "Website 2 Header Report"
+
+#. module: reports_ahch
+#: view:website:reports_ahch.report_layout_invoice_ahch_footer
+msgid "rechter block"
+msgstr "rechter block"
+

@@ -17,7 +17,7 @@
 ##############################################################################
 
 {
-    'name': 'invoice_reports_ahch',
+    'name': 'reports_ahch',
     'summary': """Invoice Reports AHCH""",
     'author': 'Joachim Grubelnik (joachim.grubelnik@datadialog.net), DataDialog',
     'version': '1.0',
@@ -26,8 +26,10 @@
     'depends': ['sale'],
     'data': [
         'report_invoice_ahch.xml',
-        'report_layout_invoice_ahch_header.xml',
-        'report_layout_invoice_ahch_footer.xml',
+        'report_picking_ahch.xml',
+        'report_layout_ahch_saint_header.xml',
+        'report_layout_ahch_slip_footer.xml',
         'invoice_reports_ahch_extension.xml',
+        'paperformat_ahch.xml'
     ],
 }
