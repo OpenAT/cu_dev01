@@ -27,6 +27,7 @@
     'data': [
         'report_invoice_ahch.xml',
         'report_picking_ahch.xml',
+        'report_saleorder_ahch.xml',
         'report_layout_ahch_saint_header.xml',
         'report_layout_ahch_slip_footer.xml',
         'invoice_reports_ahch_extension.xml',

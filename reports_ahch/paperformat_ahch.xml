@@ -21,6 +21,9 @@
         <record id="reports_ahch.report_invoice_ahch" model="ir.actions.report.xml">
             <field name="paperformat_id" ref="reports_ahch.paperformat_ahch" />
         </record>
+        <record id="reports_ahch.report_saleorder_ahch" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="reports_ahch.paperformat_ahch" />
+        </record>
         <record id="reports_ahch.report_picking_ahch" model="ir.actions.report.xml">
             <field name="paperformat_id" ref="reports_ahch.paperformat_ahch" />
         </record>

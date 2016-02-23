@@ -138,7 +138,12 @@
                             </div>
 
                         </div>
-                        <t t-call="reports_ahch.report_layout_ahch_slip_footer"/>
+                        <t t-if="o.origin">
+                            <t t-call="reports_ahch.report_layout_ahch_slip_footer"/>
+                        </t>
+                        <t t-if=" not o.origin">
+                            kein footer
+                        </t>
                         <!-- <t t-call="I10n_ch_payment_slip.one_slip_per_page_from_invoice"/> -->
                         <!-- <t t-raw="o.bvr_reference"/> -->
 

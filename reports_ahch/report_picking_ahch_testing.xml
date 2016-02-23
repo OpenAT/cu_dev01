@@ -16,25 +16,24 @@
                 <t t-if ="o and 'company_id' in o">
                     <t t-call="reports_ahch.report_layout_ahch_saint_header"/>
                     <div class="page" style="position: relative; top: 10px;">
-                           <div class="row"><div class="col-xs-4 pull-right">
-                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:50px;"/>
-                            </div></div>
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <div t-if="o.picking_type_id.code=='incoming' and o.partner_id">
-                                        <span><strong>Supplier Address:</strong></span>
-                                    </div>
-                                    <div t-if="o.picking_type_id.code=='internal' and o.partner_id">
-                                        <span><strong>Warehouse Address:</strong></span>
-                                    </div>
-                                    <div t-if="o.picking_type_id.code=='outgoing' and o.partner_id">
-                                        <span><strong>Customer Address:</strong></span>
-                                    </div>
-                                    <div t-if="o.partner_id" name="partner_header">
-                                        <div t-field="o.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;, &quot;fax&quot;], &quot;no_marker&quot;: true}"/>
-                                        <p t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></p>
-                                    </div>
-                                </div>
+                        <div class="row">
+                        <div class="col-xs-6">
+                            <div t-if="o.picking_type_id.code=='incoming' and o.partner_id">
+                                <span><strong>Supplier Address:</strong></span>
+                            </div>
+                            <div t-if="o.picking_type_id.code=='internal' and o.partner_id">
+                                <span><strong>Warehouse Address:</strong></span>
+                            </div>
+                            <div t-if="o.picking_type_id.code=='outgoing' and o.partner_id">
+                                <span><strong>Customer Address:</strong></span>
+                            </div>
+                            <div t-if="o.partner_id" name="partner_header">
+                                <div t-field="o.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;, &quot;fax&quot;], &quot;no_marker&quot;: true}"/>
+                                <p t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></p>
+                            </div>
+                        </div>
+                        </div>
+                            <div>
                                 <div class="col-xs-5 col-xs-offset-1">
                                     <div t-if="o.move_lines and o.move_lines[0].partner_id and o.move_lines[0].partner_id.id != o.partner_id.id">
                                         <span><strong>Delivery Address:</strong></span>
@@ -151,7 +150,8 @@
                                 </tr>
                               </tbody>
                             </table>
-                        </div>
+
+                    </div>
                     <!-- <t t-call="reports_ahch.report_layout_ahch_slip_footer"/> -->
                 </t>
         </template>

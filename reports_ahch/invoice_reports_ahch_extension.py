@@ -24,6 +24,7 @@ class ResPartnerBank(models.Model):
         string='Postfinance Account Number', size=11,
         help="Your PF Account."
         )
+
 def get_pz(ref_number):
     number = 0
     number += mod10r(ref_number)

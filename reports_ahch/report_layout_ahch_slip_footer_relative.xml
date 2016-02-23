@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <template id="report_layout_ahch_slip_footer">
+        <t t-if ="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"/>
+            <t t-set="customer" t-value="o.partner_id"/>
+        </t>
+            <div class="footer">
+                <style type="text/css">
+                <![CDATA[
+                /* ocrb */
+               @font-face {
+                   font-family: "ocrb";
+                   font-style: normal;
+                   font-weight: normal;
+                   src: url('fonts/ocrb.ttf') format("truetype");
+                }
+                ]]>
+                </style>
+ <!-- <p style="font-family: bvrocrb;">BVROCRB</p> -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div>
+                                    <span t-field="company.name"/><br/>
+                                    <span t-field="company.street"/><br/>
+                                    <span t-field="company.zip"/>
+                                    <span t-field="company.city"/>
+                                </div>
+                                <div style="margin-top:10px; font-size:9px; text-align:left; font-family: 'OCR-B';">
+                                    IBAN: <span t-field="company.bank_ids.acc_number"/><br/>
+                                    BIC : <span t-field="company.bank_ids.bank_bic"/>
+                                </div>
+                                <div style="margin-top:22px; margin-right:40px; margin-bottom:10px; font-size:12px; text-align:right; font-family: 'OCR-B';">
+                                    <span t-field="company.bank_ids.bvr_customer_number"/>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div>
+                                    <span t-field="company.name"/><br/>
+                                    <span t-field="company.street"/><br/>
+                                    <span t-field="company.zip"/>
+                                    <span t-field="company.city"/>
+                                </div>
+
+                                <div style="margin-top:10px; font-size:9px; text-align:left; font-family: 'OCR-B';">
+                                    IBAN: <span t-field="company.bank_ids.acc_number"/><br/>
+                                    BIC : <span t-field="company.bank_ids.bank_bic"/>
+                                </div>
+
+                                <div style="margin-top:22px; margin-bottom:10px; margin-right:40px; font-size:12px; text-align:right; font-family: 'OCR-B';">
+                                    <span t-field="company.bank_ids.bvr_customer_number"/>
+                                </div>
+                            </div>
+                        </div> <!-- row von adress und iban zeile -->
+                        <div class="row" style="margin-bottom:18px;">
+                            <t t-set="intamount" t-value="'{0:,.0f}'.format(int(o.amount_total))"/>
+                            <t t-set="decamount" t-value="str(o.amount_total).split('.')[1]" />
+                            <div class="col-xs-4" style="text-align:right; padding-bottom;3px;">
+                                <!-- <t t-if="'amount_total' in o.fields_get()"><span t-raw="'{0:,.0f}'.format(o.amount_total)" /></t> -->
+                                <!-- <t t-if="'not amount_total' in o.fields_get()"><span t-esc="0" /></t> -->
+                                <span t-esc="intamount"/>
+                                <!-- <t t-esc="'{len(o.amount_total)-2:}'.format(o.amount_total)" /> beispiel -->
+                                <!-- geht <t t-esc="'{0:,.0f}'.format(int(o.amount_total))" /> 49.95 wird zu 49 -->
+                                <!-- geht <t t-esc="'%.0f'%o.amount_total"/> ACHTUNG RUNDED 49,95 wird zu 50 -->
+                                <!-- geht <t t-esc="'{0:,.2f}'.format(int(o.amount_total))" /> 49.45 wird zu 49.00-->
+                                <!-- geht nicht <t t-esc=".formatlang(o.amount_total, digit=0)"/> -->
+                                <!-- geht <span t-esc="(o.amount).replace('.', ',')"/> replace something -->
+                                <!-- geht <t t-raw="'{0:,.2f}'.format(int(o.amount_total))" /> -->
+                                <!-- geht nicht <t t-esc="str(o.amount_total).rsplit('.')[1]"/> -->
+                                <!-- geht nicht <span t-esc=".join(_space(('%.2f' % o.amount_total)[:-3], 1))"/> -->
+                                <!-- geht nicht <span t-esc=${" ".join(_space(('%.2f' % o.amount_total)[:-3], 1))}/> -->
+                                <!-- geht nicht <span >${" ".join(_space(('%.2f' % o.amount_total)[:-3], 1))}</span> -->
+                                <!-- geth nicht <span >${"&nbsp".join(_space(('%.2f' % o.amount_total)[:-3], 1))}</span> -->
+                            </div>
+                            <div class="col-xs-2" style="text-align: right; padding-bottom;3px; padding-right:20px;">
+                                <!-- <t t-if="'amount_total' in o.fields_get()"><span t-esc="str(o.amount_total).split('.')[1]" /></t> -->
+                                <!-- <t t-if="'not amount_total' in o.fields_get()"><span t-esc="0" /></t> -->
+                                <span t-esc="decamount"/>
+                                <!-- str(o.amount_total).split('.')[0]+','+str(o.amount_total).split('.')[1].zfill(2) -->
+                            </div>
+                            <div class="col-xs-4" style="text-align:right; padding-bottom;3px; padding-left: 10px;">
+                                <t t-if="'amount_total' in o.fields_get()"><span t-esc="'{0:,.0f}'.format(int(o.amount_total))" /></t>
+                                <t t-if="'not amount_total' in o.fields_get()"><span t-esc="0" /></t>
+                            </div>
+                            <div class="col-xs-2" style="text-align: right; padding-bottom;3px; padding-right:20px;">
+                                <t t-if="'amount_total' in o.fields_get()"><span t-esc="str(o.amount_total).split('.')[1]" /></t>
+                                <t t-if="'not amount_total' in o.fields_get()"><span t-esc="0" /></t>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div style="font-size:10px; text-align:left;">
+                                <div>
+                                    <span t-field="company.company_registry" style="font-size:11px; text-align:right; font-family: 'OCR-B';"/><br/>
+                                </div>
+                                <span t-field="customer.name"/><br/>
+                                <span t-field="customer.street"/><br/>
+                                <span t-field="customer.zip"/>
+                                <span t-field="customer.city"/>
+                            </div>
+                        </div>
+                    </div> <!-- linke spalte zahlschein col-xs-8 -->
+                    <div class="col-xs-4">
+                        <div>
+                            <br/><br/><br/><br/>
+                        </div>
+                            <div style="margin-top:10px; font-size:11px; text-align:right; font-family: 'OCR-B';">
+                                <span t-field="company.company_registry"/><br/>
+                            </div>
+                        <div>
+                            <br/><br/>
+                            <span t-field="customer.name"/><br/>
+                            <span t-field="customer.street"/><br/>
+                            <span t-field="customer.zip"/>
+                            <span t-field="customer.city"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+
+                    </div>
+                    <div class="col-xs-9">
+                        <div style="font-size:12px; margin-top:-10px; margin-left: 44px; text-align:left; font-family: 'OCR-B';">
+                            <!-- <t t-if="'amount_total' in o.fields_get()"><span t-esc="'{0:,.0f}'.format(int(o.amount_total))" /></t> -->
+                            <!-- 01<span t-esc="'{%08d}'.format(intamount)"/><span t-esc="decamount"/>X><span t-esc="(company.company_registry).replace(' ', '')"/>+ <span t-field="(company.bank_ids.bvr_customer_number).replace('-', '')"/> -->
+                            <!-- 01<span t-esc="'{0:08}'.format(intamount)"/><span t-esc="decamount"/>X><span t-esc="(company.company_registry).replace(' ', '')"/>+ <span t-field="(company.bank_ids.bvr_customer_number).replace('-', '')"/> -->
+                            01<span t-esc="intamount"/><span t-esc="decamount"/>X><span t-esc="(company.company_registry).replace(' ', '')"/>+ <span t-esc="(company.bank_ids.bvr_customer_number).replace('-', '')"/>
+                            <!-- <span t-esc="get_pz(company.company_registry)"/> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </data>
+</openerp>
